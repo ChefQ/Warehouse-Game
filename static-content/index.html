@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta HTTP-EQUIV="EXPIRES" CONTENT="-1">
+		<title>Computing Science 309 Warehouse Wars</title>
+		<link href="https://fonts.googleapis.com/css?family=Bowlby+One+SC|Roboto:700" rel="stylesheet">
+		<link href="assets/css/bootstrap.min.css" rel="stylesheet">
+		<link href="assets/css/buttons.css" rel="stylesheet">
+		<link href="assets/css/style.css" rel="stylesheet">
+	</head>
+	<body>
+		<!-- <nav class="headerNav hidden">
+			<div class="navBar">
+				<h1 id="wareHouseHeader">Warehouse Wars</h1>
+				<ul>
+					<li><a href=""></a></li>
+				</ul>
+
+			</div>
+		</nav> -->
+
+		<nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top inverse hidden">
+
+			<div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
+				<h1 id="wareHouseHeader">Warehouse Wars</h1>
+				<ul class="navbar-nav ml-auto">
+		            <li class="nav-item">
+		                <a id="clickLeaderboard" class="nav-link" href="#">Leaderboard</a>
+		            </li>
+		            <li class="nav-item">
+		                <a id="clickProfile" class="nav-link" href="#">Profile</a>
+		            </li>
+		        </ul>
+    		</div>
+			<!-- <ul class="navbar-nav">
+				<h1 id="wareHouseHeader">Warehouse Wars</h1>
+				<li class="nav-item">
+					<a class="nav-link" href="#">Link</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">Link</a>
+				</li>
+			</ul> -->
+		</nav>
+
+		<div id="leaderboardView" class="gameModal hidden">
+			<h1 class="modalTitle">Leaderboard</h1>
+			<table id="leaderboardTable">
+			</table>
+			<button type="button" class="btn btn-7 btn-7h" id="goGame">Go Back To Game</button>
+		</div>
+
+		<div id="profileView" class="gameModal hidden">
+			<h1 class="modalTitle">Profile</h1>
+			<form>
+				<div class="form-group">
+					<label for="exampleInputEmail1">User Id</label>
+					<input type="id" class="form-control" id="userid" aria-describedby="">
+					<!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+				</div>
+				<div class="form-group">
+					<label for="exampleInputPassword1">Old Password</label>
+					<input type="password" class="form-control" id="oldPass" placeholder="Password">
+				</div>
+
+				<div class="form-group">
+					<label for="exampleInputPassword1">New Password</label>
+					<input type="password" class="form-control" id="newPass" placeholder="Password">
+				</div>
+
+				<div class="form-group">
+					<label for="exampleInputPassword1">Confirm Password</label>
+					<input type="password" class="form-control" id="confirmPass" placeholder="Password">
+				</div>
+				<button type="button" class="btn btn-7 btn-7h" id="updateProfile">Update</button>
+		  </form>
+		</div>
+
+		<center>
+			<form id="ui_login" class="home_divs">
+				<div class="sign_in_tab">Sign In</div>
+				<div class="register_in_tab inactive">Register</div>
+				<div id="login_div">
+					<!-- https://www.tjvantoll.com/2013/01/01/enter-should-submit-forms-stop-messing-with-that/ -->
+					<div id="sign_in_text">sign in to warhouse wars</div>
+					<!-- <div>Enter your details below.</div> -->
+
+					<div class="form-group">
+						<label class="login_labels" for="user"><b>Username</b></label>
+						<input class="form-control" id="user_field" type="text" name="user" placeholder="username">
+						<div class="login_labels" id="user_error"></div>
+					</div>
+
+					<div class="form-group">
+						<label class="login_labels" for="password"><b>Password</b></label>
+						<input class="form-control" id="pass_field" type="password" name="password" placeholder="••••••••••">
+						<div class="login_labels" id="pass_error"></div>
+					</div>
+
+					<div>
+						<button type="submit" class="btn btn-7 btn-7h" id="loginSubmit">Login</button>
+						<div id="login_errors"></div>
+					</div>
+				</div>
+			</form>
+
+			<form id="ui_register" class="home_divs hidden">
+				<div class="sign_in_tab">Sign In</div>
+				<div class="register_in_tab inactive">Register</div>
+				<div id="register_div">
+					<!-- https://www.tjvantoll.com/2013/01/01/enter-should-submit-forms-stop-messing-with-that/ -->
+					<div id="register_text">register to warhouse wars</div>
+					<!-- <div>Enter your details below.</div> -->
+
+					<div class="form-group">
+						<label class="login_labels" for="user"><b>Enter a username</b></label>
+						<input class="form-control" id="user_signup" type="text" name="user" placeholder="username">
+						<div class="login_labels" id="user_signup_error"></div>
+					</div>
+
+					<div class="form-group">
+						<label class="login_labels" for="password"><b>Enter a password</b></label>
+						<input class="form-control" id="pass_signup" type="password" name="password" placeholder="password">
+						<div class="login_labels" id="pass_signup_error"></div>
+					</div>
+
+					<div>
+						<button type="submit" class="btn btn-7 btn-7h" id="registerSubmit">Register</button>
+						<div id="register_errors"></div>
+					</div>
+				</div>
+			</form>
+
+			<div id="warhouse_game" class="hidden">
+				<table>
+					<tr>
+						<td> <div id="stage"> </div></td>
+						<td>
+							<center>
+
+								<div id="timeDisplay"></div>
+
+								<h2>Legend</h2>
+								<table class="legend">
+									<tr>
+										<td> <img src="icons/blank.gif" id="blankImage" /> </td>
+										<td> <img src="icons/emblem-package-2-24.png" id="boxImage" /> </td>
+										<td> <img src="icons/face-cool-24.png" id="playerImage" /> </td>
+										<td> <img src="icons/face-devil-grin-24.png" id="monsterImage" /> </td>
+										<td> <img src="icons/wall.jpeg" id="wallImage" /> </td>
+										<td> <img src="icons/evil.png" id="superMonster" /> </td>
+									</tr>
+									<tr>
+										<td> Empty <br/> Square </td>
+										<td> Box </td>
+										<td> Player </td>
+										<td> Monster </td>
+										<td> Wall </td>
+									</tr>
+								</table>
+								<h2>Controls</h2>
+								<table class="controls">
+									<tr>
+										<td><img src="icons/north_west.svg" onclick="find(-1,-1);" /></td>
+										<td><img src="icons/north.svg" onclick="find(0,-1);"/></td>
+										<td><img src="icons/north_east.svg" onclick="find(1,-1);"/></td>
+									</tr>
+									<tr>
+										<td><img src="icons/west.svg" onclick="find(-1,0);"/></td>
+										<td>&nbsp;</td>
+										<td><img src="icons/east.svg" onclick="find(1,0);"/></td>
+									</tr>
+									<tr>
+										<td><img src="icons/south_west.svg" onclick="find(-1,1);"/></td>
+										<td><img src="icons/south.svg" onclick="find(0,1);"/></td>
+										<td><img src="icons/south_east.svg" onclick="find(1,1);"/></td>
+									</tr>
+								</table>
+							</center>
+						</td>
+					</tr>
+				</table>
+			</div>
+		</center>
+		<script language="javascript" src="jquery-3.3.1.min.js"></script>
+		<script language="javascript" src="assets/js/game.js"></script>
+		<script language="javascript" src="ww.js" > </script>
+	</body>
+</html>

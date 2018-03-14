@@ -1,0 +1,272 @@
+/* style parts of the legend, the controls and the elements in the stage appropriately */
+html,body {
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(to left, #5d98ef, #5284dd, #4770ca, #3e5cb7, #3649a4) !important;
+}
+
+#wareHouseHeader {
+    margin: 8px 8px 8px 18px;
+    color: white;
+    font-family: 'Bowlby One SC', cursive;
+}
+
+.headerNav {
+    position: relative;
+    width: 100%;
+    height: 60px;
+    background-color: black;
+}
+
+.navbar.fixed-top {
+    height: 70px !important;
+    position: relative !important;
+}
+
+.nav-link {
+    color: white !important;
+}
+
+/* .navBar {
+    position: fixed;
+    width: 100%;
+    height: 60px;
+} */
+
+.gameModal {
+    z-index: 1;
+    position: fixed;
+    top: 68px;
+    bottom: 0;
+    width: 100%;
+    background-image: linear-gradient(to left, #5d98ef, #5284dd, #4770ca, #3e5cb7, #3649a4) !important;
+}
+
+#leaderboardView table {
+    margin: 0px auto;
+    margin-top: 100px;
+    /* width: 20%; */
+    background-color: white;
+}
+
+.gameModal button {
+    left: 50%;
+    transform: translateX(-50%);
+    width: 20%;
+    padding: 15px 85px 25px 60px;
+    margin-top: 20px;
+}
+
+.modalTitle {
+    top: 64px;
+    position: relative;
+    text-align: center;
+    margin: 25px;
+    color: white;
+    font-family: 'Bowlby One SC', cursive;
+}
+
+#profileView form {
+    height: 70%;
+    margin: 60px;
+    background: rgba(255,255,255,0.2);
+    padding-top: 30px;
+    border-radius: 10px;
+}
+
+#profileView .btn-error {
+    -webkit-animation: shake 0.5s;
+    -moz-animation: shake 0.5s;
+    animation: shake 0.5s;
+}
+
+.home_divs .btn-error {
+    -webkit-animation: shake_home 0.5s;
+    -moz-animation: shake_home 0.5s;
+    animation: shake_home 0.5s;
+}
+
+.home_divs .btn-error:after {
+    transform: translateX(-50%);
+    left: 50%;
+}
+
+
+/* From Dan Eden's animate.css: http://daneden.me/animate/ */
+@-webkit-keyframes shake {
+	0%, 100% {-webkit-transform: translateX(-50%);}
+	10%, 30%, 50%, 70%, 90% {-webkit-transform: translateX(-60%);}
+	20%, 40%, 60%, 80% {-webkit-transform: translateX(-40%);}
+}
+
+@-moz-keyframes shake {
+	0%, 100% {-moz-transform: translateX(-50%);}
+	10%, 30%, 50%, 70%, 90% {-moz-transform: translateX(-60%);}
+	20%, 40%, 60%, 80% {-moz-transform: translateX(-40%);}
+}
+
+@keyframes shake {
+	0%, 100% {transform: translateX(-50%);}
+	10%, 30%, 50%, 70%, 90% {transform: translateX(-50%);}
+	20%, 40%, 60%, 80% {transform: translateX(-40%);}
+}
+
+/* Login Shake Animation Button error */
+@-webkit-keyframes shake_home {
+	0%, 100% {-webkit-transform: translateX(0px);}
+	10%, 30%, 50%, 70%, 90% {-webkit-transform: translateX(-10px);}
+	20%, 40%, 60%, 80% {-webkit-transform: translateX(10px);}
+}
+
+@-moz-keyframes shake_home {
+	0%, 100% {-moz-transform: translateX(0px);}
+	10%, 30%, 50%, 70%, 90% {-moz-transform: translateX(-10px);}
+	20%, 40%, 60%, 80% {-moz-transform: translateX(10px);}
+}
+
+@keyframes shake_home {
+	0%, 100% {transform: translateX(0px);}
+	10%, 30%, 50%, 70%, 90% {transform: translateX(-10px);}
+	20%, 40%, 60%, 80% {transform: translateX(10px);}
+}
+
+.btn-error:after {
+	content: "Error!";
+	-webkit-animation: scaleFromUp 0.5s;
+	-moz-animation: scaleFromUp 0.5s;
+	animation: scaleFromUp 0.5s;
+}
+
+@-webkit-keyframes scaleFromUp {
+	0% {
+		-webkit-transform: scale(0) translateX(-50%);
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+		-webkit-transform: scale(1) translateX(-50%);
+	}
+}
+
+@-moz-keyframes scaleFromUp {
+	0% {
+		-moz-transform: scale(0) translateX(-50%);
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+		-moz-transform: scale(1) translateX(-50%);
+	}
+}
+
+@keyframes scaleFromUp {
+	0% {
+		transform: scale(0) translateX(-50%);
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+		transform: scale(1) translateX(-50%);
+	}
+}
+
+
+#profileView form .form-group {
+
+    margin: 0px auto;
+    width: 50%;
+}
+
+#warhouse_game {
+    margin: 30px;
+}
+
+.form-group {
+    width: 80%;
+    margin-bottom: 1.5rem;
+}
+
+.form-control {
+    border-color: black;
+}
+
+.login_labels {
+    float: left;
+}
+
+.invalid {
+    border: 2px solid red;
+    border-radius: 7px;
+    outline: none;
+    box-shadow: 0 0 10px red;
+}
+
+.wall, .blank {
+    max-width: 24px;
+    display: block;
+}
+
+.blankTableData {
+    border: 1px solid black;
+}
+
+.player, .monster, .superMonster, .box {
+    position: absolute;
+}
+
+.hidden {
+    display: none;
+}
+
+.sign_in_tab, .register_in_tab {
+    height: 50px;
+    line-height: 50px;
+    width: 50%;
+    float: left;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-family: 'Roboto';
+}
+
+.inactive {
+    background-color: gray;
+    border-radius: 2px;
+}
+
+#ui_login {
+    width: 300px;
+    height: 390px;
+}
+
+#ui_register {
+    width: 500px;
+    height: 550px;
+}
+
+.home_divs {
+    border-radius: 10px;
+    background-color: #fffefc;
+    position: absolute;
+    top: 50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+
+    -webkit-box-shadow: 20px 15px 75px -1px rgba(0,0,0,0.56);
+    -moz-box-shadow: 20px 15px 75px -1px rgba(0,0,0,0.56);
+    box-shadow: 20px 15px 75px -1px rgba(0,0,0,0.56);
+}
+
+#login_div {
+    margin-top: 200px;
+    transform: translateY(-40%);
+}
+
+#register_div {
+    margin-top: 300px;
+    transform: translateY(-50%);
+}
+
+#sign_in_text, #register_text {
+    font-family: 'Bowlby One SC', cursive;
+    margin-bottom: 20px;
+}
